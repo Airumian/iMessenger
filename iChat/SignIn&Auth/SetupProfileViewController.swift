@@ -60,7 +60,6 @@ extension SetupProfileViewController {
 		fullImageView.translatesAutoresizingMaskIntoConstraints = false
 		stackView.translatesAutoresizingMaskIntoConstraints = false
 		
-		
 		view.addSubview(welcomeLabel)
 		view.addSubview(fullImageView)
 		view.addSubview(stackView)

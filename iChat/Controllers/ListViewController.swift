@@ -7,11 +7,11 @@
 
 import UIKit
 
-struct MChat: Hashable {
+struct MChat: Hashable, Decodable {
 	var userName: String
-	var userImage: UIImage
+	var userImageString: String
 	var lastMessage: String
-	var id = UUID()
+	var id: Int
 	
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
@@ -24,12 +24,7 @@ struct MChat: Hashable {
 
 class ListViewController: UIViewController {
 	
-	let activeChats: [MChat] = [
-		MChat(userName: "Alexey", userImage: UIImage(named: "human1")!, lastMessage: "How are you?"),
-		MChat(userName: "Bob", userImage: UIImage(named: "human2")!, lastMessage: "How are you?"),
-		MChat(userName: "Misha", userImage: UIImage(named: "human3")!, lastMessage: "How are you?"),
-		MChat(userName: "Mila", userImage: UIImage(named: "human4")!, lastMessage: "How are you?"),
-	]
+	let activeChats = Bundle.main.decode([MChat].self, from: "activeChats.json")
 	
 	enum Section: Int, CaseIterable {
 		case activeChats
@@ -109,26 +104,3 @@ extension ListViewController: UISearchBarDelegate {
 		print(searchText)
 	}
 }
-
-// MARK: - SwiftUI
-import SwiftUI
-
-struct ListVCProvider: PreviewProvider {
-	static var previews: some View {
-		ContainerView().edgesIgnoringSafeArea(.all)
-	}
-	
-	struct ContainerView: UIViewControllerRepresentable {
-		
-		let tabBarVC = MainTabBarController()
-		
-		func makeUIViewController(context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) -> MainTabBarController {
-			return tabBarVC
-		}
-		
-		func updateUIViewController(_ uiViewController: ListVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) {
-			
-		}
-	}
-}
-

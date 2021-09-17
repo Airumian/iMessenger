@@ -17,6 +17,7 @@
 		D71048D526D4EC1500D8DA8F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71048D426D4EC1500D8DA8F /* SignUpViewController.swift */; };
 		D71048D726D4F7B700D8DA8F /* OneLineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71048D626D4F7B700D8DA8F /* OneLineTextField.swift */; };
 		D71048D926D5784600D8DA8F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71048D826D5784600D8DA8F /* LoginViewController.swift */; };
+		D75E222B26E735CA0051CE57 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75E222A26E735CA0051CE57 /* Bundle-Decodable.swift */; };
 		D795C69926D13F5300C69F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69826D13F5300C69F45 /* AppDelegate.swift */; };
 		D795C69B26D13F5300C69F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69A26D13F5300C69F45 /* SceneDelegate.swift */; };
 		D795C69D26D13F5300C69F45 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69C26D13F5300C69F45 /* AuthViewController.swift */; };
@@ -44,6 +45,7 @@
 		D71048D426D4EC1500D8DA8F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D71048D626D4F7B700D8DA8F /* OneLineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneLineTextField.swift; sourceTree = "<group>"; };
 		D71048D826D5784600D8DA8F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D75E222A26E735CA0051CE57 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 		D795C69526D13F5300C69F45 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C69826D13F5300C69F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D795C69A26D13F5300C69F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				D7C7BE9B26D68E81007C817A /* AddPhotoView.swift */,
 				D71048D026D4DAF800D8DA8F /* ButtonFormView.swift */,
 				D71048D626D4F7B700D8DA8F /* OneLineTextField.swift */,
+				D75E222A26E735CA0051CE57 /* Bundle-Decodable.swift */,
 				D71048CE26D4D83700D8DA8F /* UIKit */,
 			);
 			path = Extensions;
@@ -229,6 +232,7 @@
 				D71048C926D3DDD700D8DA8F /* UIColor + Extension.swift in Sources */,
 				D7C7BE9A26D68AFD007C817A /* SetupProfileViewController.swift in Sources */,
 				D71048C726D3D8AE00D8DA8F /* UIFont + Extension.swift in Sources */,
+				D75E222B26E735CA0051CE57 /* Bundle-Decodable.swift in Sources */,
 				D7C550A826D820430034710C /* PeopleViewController.swift in Sources */,
 				D7C7BE9E26D7A4B0007C817A /* SegmantentControl + Extension.swift in Sources */,
 				D71048D326D4E82900D8DA8F /* StackView + Extension.swift in Sources */,
