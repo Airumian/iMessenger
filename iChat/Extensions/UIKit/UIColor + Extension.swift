@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIColor {
-	static func buttomRed() -> UIColor {
+    
+    static func buttomRed() -> UIColor {
 		return #colorLiteral(red: 0.8156862745, green: 0.007843137255, blue: 0.1058823529, alpha: 1)
 	}
 	

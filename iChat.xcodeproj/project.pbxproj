@@ -24,6 +24,8 @@
 		D795C6A326D13F5300C69F45 /* iChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D795C6A126D13F5300C69F45 /* iChat.xcdatamodeld */; };
 		D795C6A526D13F5500C69F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D795C6A426D13F5500C69F45 /* Assets.xcassets */; };
 		D795C6A826D13F5500C69F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D795C6A626D13F5500C69F45 /* LaunchScreen.storyboard */; };
+		D7BF3AF526F48C190069B170 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */; };
+		D7BF3AF926F48D4A0069B170 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF3AF826F48D4A0069B170 /* GradientView.swift */; };
 		D7C550A226D7DF5A0034710C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C550A126D7DF5A0034710C /* ListViewController.swift */; };
 		D7C550A626D81FA80034710C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C550A526D81FA80034710C /* MainTabBarController.swift */; };
 		D7C550A826D820430034710C /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C550A726D820430034710C /* PeopleViewController.swift */; };
@@ -54,6 +56,8 @@
 		D795C6A426D13F5500C69F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D795C6A726D13F5500C69F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D795C6A926D13F5500C69F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
+		D7BF3AF826F48D4A0069B170 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D7C550A126D7DF5A0034710C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D7C550A526D81FA80034710C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		D7C550A726D820430034710C /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -94,11 +98,12 @@
 		D71048CF26D4D85500D8DA8F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D71048CE26D4D83700D8DA8F /* UIKit */,
 				D7C7BE9B26D68E81007C817A /* AddPhotoView.swift */,
 				D71048D026D4DAF800D8DA8F /* ButtonFormView.swift */,
 				D71048D626D4F7B700D8DA8F /* OneLineTextField.swift */,
 				D75E222A26E735CA0051CE57 /* Bundle-Decodable.swift */,
-				D71048CE26D4D83700D8DA8F /* UIKit */,
+				D7BF3AF826F48D4A0069B170 /* GradientView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -135,6 +140,14 @@
 			path = iChat;
 			sourceTree = "<group>";
 		};
+		D7BF3AF326F48C090069B170 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		D7C550A326D81F200034710C /* SignIn&Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +162,7 @@
 		D7C550A426D81F5C0034710C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D7BF3AF326F48C090069B170 /* Cell */,
 				D7C550A526D81FA80034710C /* MainTabBarController.swift */,
 				D7C550A126D7DF5A0034710C /* ListViewController.swift */,
 				D7C550A726D820430034710C /* PeopleViewController.swift */,
@@ -228,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D71048D926D5784600D8DA8F /* LoginViewController.swift in Sources */,
+				D7BF3AF926F48D4A0069B170 /* GradientView.swift in Sources */,
 				D71048CD26D3E45E00D8DA8F /* UIImageView + Extension.swift in Sources */,
 				D71048C926D3DDD700D8DA8F /* UIColor + Extension.swift in Sources */,
 				D7C7BE9A26D68AFD007C817A /* SetupProfileViewController.swift in Sources */,
@@ -246,6 +261,7 @@
 				D795C69926D13F5300C69F45 /* AppDelegate.swift in Sources */,
 				D7C550A226D7DF5A0034710C /* ListViewController.swift in Sources */,
 				D795C69B26D13F5300C69F45 /* SceneDelegate.swift in Sources */,
+				D7BF3AF526F48C190069B170 /* ActiveChatCell.swift in Sources */,
 				D71048D726D4F7B700D8DA8F /* OneLineTextField.swift in Sources */,
 				D795C6A326D13F5300C69F45 /* iChat.xcdatamodeld in Sources */,
 			);
