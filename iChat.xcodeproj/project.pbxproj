@@ -21,7 +21,6 @@
 		D795C69926D13F5300C69F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69826D13F5300C69F45 /* AppDelegate.swift */; };
 		D795C69B26D13F5300C69F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69A26D13F5300C69F45 /* SceneDelegate.swift */; };
 		D795C69D26D13F5300C69F45 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69C26D13F5300C69F45 /* AuthViewController.swift */; };
-		D795C6A326D13F5300C69F45 /* iChat.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D795C6A126D13F5300C69F45 /* iChat.xcdatamodeld */; };
 		D795C6A526D13F5500C69F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D795C6A426D13F5500C69F45 /* Assets.xcassets */; };
 		D795C6A826D13F5500C69F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D795C6A626D13F5500C69F45 /* LaunchScreen.storyboard */; };
 		D7BF3AF526F48C190069B170 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */; };
@@ -34,6 +33,8 @@
 		D7C7BE9A26D68AFD007C817A /* SetupProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7BE9926D68AFD007C817A /* SetupProfileViewController.swift */; };
 		D7C7BE9C26D68E81007C817A /* AddPhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7BE9B26D68E81007C817A /* AddPhotoView.swift */; };
 		D7C7BE9E26D7A4B0007C817A /* SegmantentControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7BE9D26D7A4B0007C817A /* SegmantentControl + Extension.swift */; };
+		D7EB25FD26F5CF5B00237A9B /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EB25FC26F5CF5B00237A9B /* WaitingChatCell.swift */; };
+		D7EB260026F5D10400237A9B /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EB25FF26F5D10400237A9B /* SelfConfiguringCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +53,6 @@
 		D795C69826D13F5300C69F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D795C69A26D13F5300C69F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D795C69C26D13F5300C69F45 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
-		D795C6A226D13F5300C69F45 /* iChat.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iChat.xcdatamodel; sourceTree = "<group>"; };
 		D795C6A426D13F5500C69F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D795C6A726D13F5500C69F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D795C6A926D13F5500C69F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -66,6 +66,8 @@
 		D7C7BE9926D68AFD007C817A /* SetupProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupProfileViewController.swift; sourceTree = "<group>"; };
 		D7C7BE9B26D68E81007C817A /* AddPhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoView.swift; sourceTree = "<group>"; };
 		D7C7BE9D26D7A4B0007C817A /* SegmantentControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmantentControl + Extension.swift"; sourceTree = "<group>"; };
+		D7EB25FC26F5CF5B00237A9B /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
+		D7EB25FF26F5D10400237A9B /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,13 +131,13 @@
 			children = (
 				D795C69826D13F5300C69F45 /* AppDelegate.swift */,
 				D795C69A26D13F5300C69F45 /* SceneDelegate.swift */,
-				D7C550A426D81F5C0034710C /* Controllers */,
-				D7C550A326D81F200034710C /* SignIn&Auth */,
-				D71048CF26D4D85500D8DA8F /* Extensions */,
 				D795C6A426D13F5500C69F45 /* Assets.xcassets */,
-				D795C6A626D13F5500C69F45 /* LaunchScreen.storyboard */,
+				D7EB260126F5D16300237A9B /* Base */,
+				D7C550A426D81F5C0034710C /* Controllers */,
+				D71048CF26D4D85500D8DA8F /* Extensions */,
+				D7EB25FE26F5D0EB00237A9B /* Protocols */,
+				D7C550A326D81F200034710C /* SignIn&Auth */,
 				D795C6A926D13F5500C69F45 /* Info.plist */,
-				D795C6A126D13F5300C69F45 /* iChat.xcdatamodeld */,
 			);
 			path = iChat;
 			sourceTree = "<group>";
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */,
+				D7EB25FC26F5CF5B00237A9B /* WaitingChatCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -162,12 +165,28 @@
 		D7C550A426D81F5C0034710C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				D7BF3AF326F48C090069B170 /* Cell */,
 				D7C550A526D81FA80034710C /* MainTabBarController.swift */,
 				D7C550A126D7DF5A0034710C /* ListViewController.swift */,
 				D7C550A726D820430034710C /* PeopleViewController.swift */,
+				D7BF3AF326F48C090069B170 /* Cell */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D7EB25FE26F5D0EB00237A9B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D7EB25FF26F5D10400237A9B /* SelfConfiguringCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		D7EB260126F5D16300237A9B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D795C6A626D13F5500C69F45 /* LaunchScreen.storyboard */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +262,7 @@
 			files = (
 				D71048D926D5784600D8DA8F /* LoginViewController.swift in Sources */,
 				D7BF3AF926F48D4A0069B170 /* GradientView.swift in Sources */,
+				D7EB260026F5D10400237A9B /* SelfConfiguringCell.swift in Sources */,
 				D71048CD26D3E45E00D8DA8F /* UIImageView + Extension.swift in Sources */,
 				D71048C926D3DDD700D8DA8F /* UIColor + Extension.swift in Sources */,
 				D7C7BE9A26D68AFD007C817A /* SetupProfileViewController.swift in Sources */,
@@ -260,10 +280,10 @@
 				D7C550A626D81FA80034710C /* MainTabBarController.swift in Sources */,
 				D795C69926D13F5300C69F45 /* AppDelegate.swift in Sources */,
 				D7C550A226D7DF5A0034710C /* ListViewController.swift in Sources */,
+				D7EB25FD26F5CF5B00237A9B /* WaitingChatCell.swift in Sources */,
 				D795C69B26D13F5300C69F45 /* SceneDelegate.swift in Sources */,
 				D7BF3AF526F48C190069B170 /* ActiveChatCell.swift in Sources */,
 				D71048D726D4F7B700D8DA8F /* OneLineTextField.swift in Sources */,
-				D795C6A326D13F5300C69F45 /* iChat.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,19 +477,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		D795C6A126D13F5300C69F45 /* iChat.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				D795C6A226D13F5300C69F45 /* iChat.xcdatamodel */,
-			);
-			currentVersion = D795C6A226D13F5300C69F45 /* iChat.xcdatamodel */;
-			path = iChat.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = D795C68D26D13F5300C69F45 /* Project object */;
 }

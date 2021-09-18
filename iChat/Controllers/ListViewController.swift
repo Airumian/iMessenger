@@ -5,7 +5,6 @@
 //  Created by Alexander Airumyan on 26.08.2021.
 //
 
-
 import UIKit
 
 struct MChat: Hashable, Decodable {
@@ -62,7 +61,7 @@ class ListViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.register(ActiveChatCell.self, forCellWithReuseIdentifier: ActiveChatCell.reuseId)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cellid2")
+        collectionView.register(WaitingChatCell.self, forCellWithReuseIdentifier: WaitingChatCell.reuseId)
     }
     
     private func reloadData() {
@@ -96,9 +95,7 @@ extension ListViewController {
             case .activeChats:
                 return self.configure(cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChats:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid2", for: indexPath)
-                cell.backgroundColor = .systemRed
-                return cell
+                return self.configure(cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
     }
@@ -160,5 +157,27 @@ extension ListViewController {
 extension ListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+    }
+}
+
+// MARK: - SwiftUI
+import SwiftUI
+
+struct ListVCProvider: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let tabBarVC = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) -> MainTabBarController {
+            return tabBarVC
+        }
+        
+        func updateUIViewController(_ uiViewController: ListVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) {
+            
+        }
     }
 }

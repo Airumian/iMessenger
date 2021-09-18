@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol SelfConfiguringCell {
-    static var reuseId: String { get }
-    func configure(with value: MChat)
-}
-
 class ActiveChatCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseId: String = "ActiveChatCell"
     
@@ -84,5 +79,27 @@ extension ActiveChatCell {
             gradientView.widthAnchor.constraint(equalToConstant: 8)
         ])
         
+    }
+}
+
+// MARK: - SwiftUI
+import SwiftUI
+
+struct ActiveChatProvider: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let tabBarVC = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ActiveChatProvider.ContainerView>) -> MainTabBarController {
+            return tabBarVC
+        }
+        
+        func updateUIViewController(_ uiViewController: ActiveChatProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<ActiveChatProvider.ContainerView>) {
+            
+        }
     }
 }
