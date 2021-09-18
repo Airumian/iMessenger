@@ -35,6 +35,7 @@
 		D7C7BE9E26D7A4B0007C817A /* SegmantentControl + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C7BE9D26D7A4B0007C817A /* SegmantentControl + Extension.swift */; };
 		D7EB25FD26F5CF5B00237A9B /* WaitingChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EB25FC26F5CF5B00237A9B /* WaitingChatCell.swift */; };
 		D7EB260026F5D10400237A9B /* SelfConfiguringCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EB25FF26F5D10400237A9B /* SelfConfiguringCell.swift */; };
+		D7EB260326F6112700237A9B /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EB260226F6112700237A9B /* SectionHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		D7C7BE9D26D7A4B0007C817A /* SegmantentControl + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SegmantentControl + Extension.swift"; sourceTree = "<group>"; };
 		D7EB25FC26F5CF5B00237A9B /* WaitingChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingChatCell.swift; sourceTree = "<group>"; };
 		D7EB25FF26F5D10400237A9B /* SelfConfiguringCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfConfiguringCell.swift; sourceTree = "<group>"; };
+		D7EB260226F6112700237A9B /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				D7C550A126D7DF5A0034710C /* ListViewController.swift */,
 				D7C550A726D820430034710C /* PeopleViewController.swift */,
 				D7BF3AF326F48C090069B170 /* Cell */,
+				D7EB260226F6112700237A9B /* SectionHeader.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			files = (
 				D71048D926D5784600D8DA8F /* LoginViewController.swift in Sources */,
 				D7BF3AF926F48D4A0069B170 /* GradientView.swift in Sources */,
+				D7EB260326F6112700237A9B /* SectionHeader.swift in Sources */,
 				D7EB260026F5D10400237A9B /* SelfConfiguringCell.swift in Sources */,
 				D71048CD26D3E45E00D8DA8F /* UIImageView + Extension.swift in Sources */,
 				D71048C926D3DDD700D8DA8F /* UIColor + Extension.swift in Sources */,
