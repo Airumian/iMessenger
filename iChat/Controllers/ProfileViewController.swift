@@ -11,17 +11,17 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     let containerView = UIView()
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "human2") , contentMode: .scaleAspectFill)
+    let imageView = UIImageView(image: #imageLiteral(resourceName: "human2"), contentMode: .scaleAspectFill)
     let nameLabel = UILabel(text: "Peter Ben", font: .systemFont(ofSize: 20, weight: .light))
     let aboutMeLabel = UILabel(text: "You have the opportunity to chat with the best man in the world!", font: .systemFont(ofSize: 16, weight: .light))
-    let myTextField = UITextField()
+    let myTextField = InsertableTextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         constomizeElements()
-        setupContraints()
+        setupConstraints()
     }
     
     private func constomizeElements() {
@@ -33,14 +33,21 @@ class ProfileViewController: UIViewController {
         aboutMeLabel.numberOfLines = 0
         containerView.backgroundColor = .mainWhite()
         containerView.layer.cornerRadius = 30
-        myTextField.borderStyle = .roundedRect
+        
+        if let button = myTextField.rightView as? UIButton {
+            button.addTarget(self, action: #selector(sendMessage), for: .touchUpInside)
+        }
+    }
+    
+    @objc private func sendMessage() {
+        print(#function)
     }
     
 }
 
 extension ProfileViewController {
     
-    private func setupContraints() {
+    private func setupConstraints() {
         view.addSubview(imageView)
         view.addSubview(containerView)
         containerView.addSubview(nameLabel)
