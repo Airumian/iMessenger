@@ -4,6 +4,7 @@
 //
 //  Created by Alexander Airumyan on 24.08.2021.
 //
+//
 
 import UIKit
 
@@ -35,6 +36,23 @@ class LoginViewController: UIViewController {
         view.backgroundColor = .white
         googleButton.customizeGoogleButton()
         setupConstraints()
+        
+        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func loginButtonTapped() {
+        print(#function)
+        AuthService.shared.login(email: emailTextField.text!,
+                                 password: passwordTextField.text!) { (result) in
+            switch result {
+                
+            case .success(let user):
+                self.showAlert(with: "Успешно!", and: "Вы авторизованы!")
+                print(user.email)
+            case .failure(let error):
+                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
+            }
+        }
     }
 }
 
@@ -46,8 +64,8 @@ extension LoginViewController {
                                          axis: .vertical,
                                          spacing: 0)
         let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField],
-        axis: .vertical,
-        spacing: 0)
+                                            axis: .vertical,
+                                            spacing: 0)
         
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         let stackView = UIStackView(arrangedSubviews: [
@@ -56,7 +74,7 @@ extension LoginViewController {
             emailStackView,
             passwordStackView,
             loginButton
-            ],
+        ],
                                     axis: .vertical,
                                     spacing: 40)
         
