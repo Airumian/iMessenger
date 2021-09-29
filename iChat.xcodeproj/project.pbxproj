@@ -24,6 +24,8 @@
 		D75F656E2702565D008BFF33 /* ChatRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F656D2702565D008BFF33 /* ChatRequestViewController.swift */; };
 		D75F6572270330D0008BFF33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D75F6571270330D0008BFF33 /* GoogleService-Info.plist */; };
 		D75F657527047DBE008BFF33 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F657427047DBE008BFF33 /* AuthService.swift */; };
+		D75F65772704972B008BFF33 /* Validators.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F65762704972A008BFF33 /* Validators.swift */; };
+		D75F657927049A8F008BFF33 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75F657827049A8F008BFF33 /* AuthError.swift */; };
 		D795C69926D13F5300C69F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69826D13F5300C69F45 /* AppDelegate.swift */; };
 		D795C69B26D13F5300C69F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69A26D13F5300C69F45 /* SceneDelegate.swift */; };
 		D795C69D26D13F5300C69F45 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69C26D13F5300C69F45 /* AuthViewController.swift */; };
@@ -70,6 +72,8 @@
 		D75F656D2702565D008BFF33 /* ChatRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRequestViewController.swift; sourceTree = "<group>"; };
 		D75F6571270330D0008BFF33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D75F657427047DBE008BFF33 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D75F65762704972A008BFF33 /* Validators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validators.swift; sourceTree = "<group>"; };
+		D75F657827049A8F008BFF33 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		D795C69526D13F5300C69F45 /* iChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D795C69826D13F5300C69F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D795C69A26D13F5300C69F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +170,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D75F657A27049E79008BFF33 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D75F657827049A8F008BFF33 /* AuthError.swift */,
+				D75F65762704972A008BFF33 /* Validators.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		D795C68C26D13F5300C69F45 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +207,7 @@
 				D71048CF26D4D85500D8DA8F /* Extensions */,
 				D7EB25FE26F5D0EB00237A9B /* Protocols */,
 				D7C550A326D81F200034710C /* SignIn&Auth */,
+				D75F657A27049E79008BFF33 /* Helpers */,
 				D795C6A626D13F5500C69F45 /* LaunchScreen.storyboard */,
 				D7EB260426F6269100237A9B /* users.json */,
 				D7C550AB26D8ECF60034710C /* waitingChats.json */,
@@ -220,8 +234,8 @@
 			children = (
 				D795C69C26D13F5300C69F45 /* AuthViewController.swift */,
 				D71048D826D5784600D8DA8F /* LoginViewController.swift */,
-				D7C7BE9926D68AFD007C817A /* SetupProfileViewController.swift */,
 				D71048D426D4EC1500D8DA8F /* SignUpViewController.swift */,
+				D7C7BE9926D68AFD007C817A /* SetupProfileViewController.swift */,
 			);
 			path = "SignIn&Auth";
 			sourceTree = "<group>";
@@ -388,8 +402,10 @@
 				D7EB260326F6112700237A9B /* SectionHeader.swift in Sources */,
 				D7EB260026F5D10400237A9B /* SelfConfiguringCell.swift in Sources */,
 				D71048CD26D3E45E00D8DA8F /* UIImageView + Extension.swift in Sources */,
+				D75F657927049A8F008BFF33 /* AuthError.swift in Sources */,
 				D71048C926D3DDD700D8DA8F /* UIColor + Extension.swift in Sources */,
 				D7EB260826F6275E00237A9B /* MUser.swift in Sources */,
+				D75F65772704972B008BFF33 /* Validators.swift in Sources */,
 				D7C7BE9A26D68AFD007C817A /* SetupProfileViewController.swift in Sources */,
 				D71048C726D3D8AE00D8DA8F /* UIFont + Extension.swift in Sources */,
 				D75F65682701DA49008BFF33 /* InsertableTextField.swift in Sources */,
