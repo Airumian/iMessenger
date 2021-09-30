@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol AuthNagatingDelegate: class {
-    func toLoginVC()
-    func toSignUpVC()
-}
-
 class LoginViewController: UIViewController {
     
     let welcomeLabel = UILabel(text: "Welcome back!", font: .avenir26())
@@ -35,7 +30,7 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    weak var delegate: AuthNagatingDelegate?
+    weak var delegate: AuthNavigatingDelegate?
     
     
     override func viewDidLoad() {
@@ -54,10 +49,10 @@ class LoginViewController: UIViewController {
         AuthService.shared.login(email: emailTextField.text!,
                                  password: passwordTextField.text!) { (result) in
             switch result {
-                
-            case .success(let user):
-                self.showAlert(with: "Успешно!", and: "Вы авторизованы!")
-                print(user.email)
+            case .success(_):
+                self.showAlert(with: "Успешно!", and: "Вы авторизованы!") {
+                    self.present(MainTabBarController(), animated: true, completion: nil)
+                }
             case .failure(let error):
                 self.showAlert(with: "Ошибка!", and: error.localizedDescription)
             }

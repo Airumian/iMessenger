@@ -37,23 +37,11 @@ class AuthViewController: UIViewController {
     }
     
     @objc private func emailButtonTapped() {
-        print(#function)
         present(signUpVC, animated: true, completion: nil)
     }
     
     @objc private func loginButtonTapped() {
-        print(#function)
         present(loginVC, animated: true, completion: nil)
-    }
-}
-
-extension AuthViewController: AuthNagatingDelegate {
-    func toLoginVC() {
-        present(loginVC, animated: true, completion: nil)
-    }
-    
-    func toSignUpVC() {
-        present(signUpVC, animated: true, completion: nil)
     }
 }
 
@@ -81,6 +69,16 @@ extension AuthViewController {
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40)
         ])
+    }
+}
+
+extension AuthViewController: AuthNavigatingDelegate {
+    func toLoginVC() {
+        present(loginVC, animated: true, completion: nil)
+    }
+    
+    func toSignUpVC() {
+        present(signUpVC, animated: true, completion: nil)
     }
 }
 

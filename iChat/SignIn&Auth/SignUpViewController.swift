@@ -4,6 +4,7 @@
 //
 //  Created by Alexander Airumyan on 24.08.2021.
 //
+//
 
 import UIKit
 
@@ -29,7 +30,7 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
-    weak var delegate: AuthNagatingDelegate?
+    weak var delegate: AuthNavigatingDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,18 +43,19 @@ class SignUpViewController: UIViewController {
     }
     
     @objc private func signUpButtonTapped() {
-        print(#function)
-        AuthService.shared.register(email: emailTextField.text,
-                                    password: passwordTextField.text,
-                                    confirmPassword: confirmPasswordTextField.text) { (result) in
-            switch result {
-            case.success(let user):
-                self.showAlert(with: "Успешно!", and: "Вы зарегистрированы!") {
-                    self.present(SetupProfileViewController(), animated: true, completion: nil)
+        AuthService.shared.register(
+            email: emailTextField.text,
+            password: passwordTextField.text,
+            confirmPassword: confirmPasswordTextField.text) { (result) in
+                switch result {
+                case .success(let user):
+                    self.showAlert(with: "Успешно!", and: "Вы зарегистрированны!") {
+                        self.present(SetupProfileViewController(), animated: true, completion: nil)
+                    }
+                    
+                case .failure(let error):
+                    self.showAlert(with: "Ошибка!", and: error.localizedDescription)
                 }
-            case.failure(let error):
-                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
-            }
         }
     }
     
@@ -77,7 +79,7 @@ extension SignUpViewController {
             passwordStackView,
             confirmPasswordStackView,
             signUpButton
-        ],
+            ],
                                     axis: .vertical,
                                     spacing: 40)
         
@@ -86,7 +88,7 @@ extension SignUpViewController {
         let bottomStackView = UIStackView(arrangedSubviews: [
             alreadyOnboardLabel,
             loginButton
-        ],
+            ],
                                           axis: .horizontal,
                                           spacing: 10)
         bottomStackView.alignment = .firstBaseline
@@ -140,7 +142,9 @@ struct SignUpVCProvider: PreviewProvider {
     }
 }
 
+
 extension UIViewController {
+    
     func showAlert(with title: String, and message: String, completion: @escaping () -> Void = { }) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
@@ -149,4 +153,5 @@ extension UIViewController {
         alertController.addAction(okAction)
         present(alertController, animated: true, completion: nil)
     }
+    
 }
