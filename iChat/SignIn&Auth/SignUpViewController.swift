@@ -4,7 +4,6 @@
 //
 //  Created by Alexander Airumyan on 24.08.2021.
 //
-//
 
 import UIKit
 
@@ -50,7 +49,7 @@ class SignUpViewController: UIViewController {
                 switch result {
                 case .success(let user):
                     self.showAlert(with: "Успешно!", and: "Вы зарегистрированны!") {
-                        self.present(SetupProfileViewController(), animated: true, completion: nil)
+                        self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                     }
                     
                 case .failure(let error):
