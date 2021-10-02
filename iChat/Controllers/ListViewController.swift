@@ -28,6 +28,18 @@ class ListViewController: UIViewController {
     var dataSource: UICollectionViewDiffableDataSource<Section, MChat>?
     var collectionView: UICollectionView!
     
+    private let currentUser: MUser
+       
+       init(currentUser: MUser) {
+           self.currentUser = currentUser
+           super.init(nibName: nil, bundle: nil)
+           title = currentUser.username
+       }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -67,7 +79,7 @@ class ListViewController: UIViewController {
         
         snapshot.appendItems(waitingChats, toSection: .waitingChats)
         snapshot.appendItems(activeChats, toSection: .activeChats)
-        
+
         dataSource?.apply(snapshot, animatingDifferences: true)
     }
 }
@@ -85,19 +97,17 @@ extension ListViewController {
             case .activeChats:
                 return self.configure(collectionView: collectionView, cellType: ActiveChatCell.self, with: chat, for: indexPath)
             case .waitingChats:
-                return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
+                 return self.configure(collectionView: collectionView, cellType: WaitingChatCell.self, with: chat, for: indexPath)
             }
         })
         
         dataSource?.supplementaryViewProvider = {
             collectionView, kind, indexPath in
-            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Can not create new section header")}
-            guard let section = Section(rawValue: indexPath.section) else {
-                fatalError("Unknown section kind") }
+            guard let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: SectionHeader.reuseId, for: indexPath) as? SectionHeader else { fatalError("Can not create new section header") }
+            guard let section = Section(rawValue: indexPath.section) else { fatalError("Unknown section kind") }
             sectionHeader.configure(text: section.description(),
                                     font: .laoSangamMN20(),
-                                    textColor: #colorLiteral(red: 0.5725490196, green: 0.5725490196, blue: 0.5725490196, alpha: 1))
-            
+                                    textColor: #colorLiteral(red: 0.5741485357, green: 0.5741624236, blue: 0.574154973, alpha: 1))
             return sectionHeader
         }
     }
@@ -111,7 +121,7 @@ extension ListViewController {
             guard let section = Section(rawValue: senctionIndex) else {
                 fatalError("Unknown section kind")
             }
-            
+        
             switch section {
             case .activeChats:
                 return self.createActiveChats()
@@ -119,6 +129,7 @@ extension ListViewController {
                 return self.createWaitingChats()
             }
         }
+        
         let config = UICollectionViewCompositionalLayoutConfiguration()
         config.interSectionSpacing = 20
         layout.configuration = config
@@ -133,15 +144,11 @@ extension ListViewController {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(88),
                                                heightDimension: .absolute(88))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                       subitems: [item])
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 20
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16,
-                                                             leading: 20,
-                                                             bottom: 0,
-                                                             trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
         section.orthogonalScrollingBehavior = .continuous
         
         let sectionHeader = createSectionHeader()
@@ -156,15 +163,12 @@ extension ListViewController {
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                heightDimension: .absolute(78))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize,
-                                                     subitems: [item])
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = 8
-        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16,
-                                                             leading: 20,
-                                                             bottom: 0,
-                                                             trailing: 20)
+        section.contentInsets = NSDirectionalEdgeInsets.init(top: 16, leading: 20, bottom: 0, trailing: 20)
+        
         let sectionHeader = createSectionHeader()
         section.boundarySupplementaryItems = [sectionHeader]
         return section
@@ -173,9 +177,10 @@ extension ListViewController {
     private func createSectionHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let sectionHeaderSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                        heightDimension: .estimated(1))
-        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize:sectionHeaderSize,
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: sectionHeaderSize,
                                                                         elementKind: UICollectionView.elementKindSectionHeader,
                                                                         alignment: .top)
+        
         return sectionHeader
     }
 }
@@ -197,9 +202,9 @@ struct ListVCProvider: PreviewProvider {
     
     struct ContainerView: UIViewControllerRepresentable {
         
-        let tabBarVC = ListViewController()
+        let tabBarVC = MainTabBarController()
         
-        func makeUIViewController(context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) -> ListViewController {
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ListVCProvider.ContainerView>) -> MainTabBarController {
             return tabBarVC
         }
         

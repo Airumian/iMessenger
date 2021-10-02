@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
     
     weak var delegate: AuthNavigatingDelegate?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,17 +44,25 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        print(#function)
-        AuthService.shared.login(email: emailTextField.text!,
-                                 password: passwordTextField.text!) { (result) in
-            switch result {
-            case .success(_):
-                self.showAlert(with: "Успешно!", and: "Вы авторизованы!") {
-                    self.present(MainTabBarController(), animated: true, completion: nil)
+        AuthService.shared.login(
+            email: emailTextField.text!,
+            password: passwordTextField.text!) { (result) in
+                switch result {
+                case .success(let user):
+                    self.showAlert(with: "Успешно!", and: "Вы авторизованы!") {
+                        FirestoreService.shared.getUserData(user: user) { (result) in
+                            switch result {
+                            case .success(let muser):
+                                self.present(MainTabBarController(), animated: true, completion: nil)
+                            case .failure(_):
+                                self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
+                            }
+                        }
+                        
+                    }
+                case .failure(let error):
+                    self.showAlert(with: "Ошибка!", and: error.localizedDescription)
                 }
-            case .failure(let error):
-                self.showAlert(with: "Ошибка!", and: error.localizedDescription)
-            }
         }
     }
     
@@ -63,7 +70,6 @@ class LoginViewController: UIViewController {
         dismiss(animated: true) {
             self.delegate?.toSignUpVC()
         }
-        present(SignUpViewController(), animated: true, completion: nil)
     }
 }
 
@@ -75,8 +81,8 @@ extension LoginViewController {
                                          axis: .vertical,
                                          spacing: 0)
         let passwordStackView = UIStackView(arrangedSubviews: [passwordLabel, passwordTextField],
-                                            axis: .vertical,
-                                            spacing: 0)
+        axis: .vertical,
+        spacing: 0)
         
         loginButton.heightAnchor.constraint(equalToConstant: 60).isActive = true
         let stackView = UIStackView(arrangedSubviews: [
@@ -85,7 +91,7 @@ extension LoginViewController {
             emailStackView,
             passwordStackView,
             loginButton
-        ],
+            ],
                                     axis: .vertical,
                                     spacing: 40)
         

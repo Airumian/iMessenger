@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class PeopleViewController: UIViewController {
     
-    let users = Bundle.main.decode([MUser].self, from: "users.json")
+//    let users = Bundle.main.decode([MUser].self, from: "users.json")
+    let users = [MUser]()
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<Section, MUser>!
     
@@ -23,14 +25,41 @@ class PeopleViewController: UIViewController {
         }
     }
     
+    private let currentUser: MUser
+    
+    init(currentUser: MUser) {
+        self.currentUser = currentUser
+        super.init(nibName: nil, bundle: nil)
+        title = currentUser.username
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .orange
         setupSearchBar()
         setupCollectionView()
         createDataSource()
         reloadData(with: nil)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(signOut))
+    }
+    
+    @objc private func signOut() {
+        let ac = UIAlertController(title: nil, message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "Sign Out", style: .destructive, handler: { (_) in
+            do {
+                try Auth.auth().signOut()
+                UIApplication.shared.keyWindow?.rootViewController = AuthViewController()
+            } catch {
+                print("Error signing out: \(error.localizedDescription)")
+            }
+        }))
+        present(ac, animated: true, completion: nil)
     }
     
     private func setupCollectionView() {
@@ -41,7 +70,7 @@ class PeopleViewController: UIViewController {
         
         collectionView.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SectionHeader.reuseId)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
+        collectionView.register(UserCell.self, forCellWithReuseIdentifier: UserCell.reuseId)
     }
     
     private func setupSearchBar() {
@@ -57,7 +86,7 @@ class PeopleViewController: UIViewController {
     
     private func reloadData(with searchText: String?) {
         let filtered = users.filter { (user) -> Bool in
-            user.conteints(filter: searchText)
+            user.contains(filter: searchText)
         }
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, MUser>()
@@ -77,9 +106,6 @@ extension PeopleViewController {
             
             switch section {
             case .users:
-//                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellid", for: indexPath)
-//                cell.backgroundColor = .systemBlue
-//                return cell
                 return self.configure(collectionView: collectionView, cellType: UserCell.self, with: user, for: indexPath)
             }
         })
@@ -97,6 +123,7 @@ extension PeopleViewController {
     }
 }
 
+// MARK: - Setup layout
 extension PeopleViewController {
     private func createCompositionalLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewCompositionalLayout { (senctionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
@@ -151,5 +178,27 @@ extension PeopleViewController {
 extension PeopleViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         reloadData(with: searchText)
+    }
+}
+
+// MARK: - SwiftUI
+import SwiftUI
+
+struct PeopleVCProvider: PreviewProvider {
+    static var previews: some View {
+        ContainerView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainerView: UIViewControllerRepresentable {
+        
+        let tabBarVC = MainTabBarController()
+        
+        func makeUIViewController(context: UIViewControllerRepresentableContext<PeopleVCProvider.ContainerView>) -> MainTabBarController {
+            return tabBarVC
+        }
+        
+        func updateUIViewController(_ uiViewController: PeopleVCProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<PeopleVCProvider.ContainerView>) {
+            
+        }
     }
 }

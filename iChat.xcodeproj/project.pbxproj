@@ -32,6 +32,8 @@
 		D795C69D26D13F5300C69F45 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795C69C26D13F5300C69F45 /* AuthViewController.swift */; };
 		D795C6A526D13F5500C69F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D795C6A426D13F5500C69F45 /* Assets.xcassets */; };
 		D795C6A826D13F5500C69F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D795C6A626D13F5500C69F45 /* LaunchScreen.storyboard */; };
+		D7BCF5E427086599006DFD36 /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BCF5E327086599006DFD36 /* FirestoreService.swift */; };
+		D7BCF5E627086955006DFD36 /* UserError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BCF5E527086955006DFD36 /* UserError.swift */; };
 		D7BF3AF526F48C190069B170 /* ActiveChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */; };
 		D7BF3AF926F48D4A0069B170 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BF3AF826F48D4A0069B170 /* GradientView.swift */; };
 		D7C550A226D7DF5A0034710C /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C550A126D7DF5A0034710C /* ListViewController.swift */; };
@@ -83,6 +85,8 @@
 		D795C6A426D13F5500C69F45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D795C6A726D13F5500C69F45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D795C6A926D13F5500C69F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7BCF5E327086599006DFD36 /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
+		D7BCF5E527086955006DFD36 /* UserError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserError.swift; sourceTree = "<group>"; };
 		D7BF3AF426F48C190069B170 /* ActiveChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveChatCell.swift; sourceTree = "<group>"; };
 		D7BF3AF826F48D4A0069B170 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D7C550A126D7DF5A0034710C /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			children = (
 				D7EB260B26F627F100237A9B /* Models */,
 				D75F657427047DBE008BFF33 /* AuthService.swift */,
+				D7BCF5E327086599006DFD36 /* FirestoreService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				D75F657827049A8F008BFF33 /* AuthError.swift */,
 				D75F65762704972A008BFF33 /* Validators.swift */,
+				D7BCF5E527086955006DFD36 /* UserError.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				D75F65682701DA49008BFF33 /* InsertableTextField.swift in Sources */,
 				D75E222B26E735CA0051CE57 /* Bundle-Decodable.swift in Sources */,
 				D7C550A826D820430034710C /* PeopleViewController.swift in Sources */,
+				D7BCF5E427086599006DFD36 /* FirestoreService.swift in Sources */,
 				D75F65662701C7B3008BFF33 /* ProfileViewController.swift in Sources */,
 				D7C7BE9E26D7A4B0007C817A /* SegmantentControl + Extension.swift in Sources */,
 				D75F656E2702565D008BFF33 /* ChatRequestViewController.swift in Sources */,
@@ -421,6 +428,7 @@
 				D71048CB26D3E23A00D8DA8F /* Label + Extension.swift in Sources */,
 				D795C69D26D13F5300C69F45 /* AuthViewController.swift in Sources */,
 				D71048D526D4EC1500D8DA8F /* SignUpViewController.swift in Sources */,
+				D7BCF5E627086955006DFD36 /* UserError.swift in Sources */,
 				D71048C526D3D16300D8DA8F /* UIButtom + Extension.swift in Sources */,
 				D75F656C270255FF008BFF33 /* UIView + Extension.swift in Sources */,
 				D71048D126D4DAF800D8DA8F /* ButtonFormView.swift in Sources */,
