@@ -1,8 +1,9 @@
 //
 //  MUser.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 18.09.2021.
+//  Created by Алексей Пархоменко on 28.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -27,6 +28,23 @@ struct MUser: Hashable, Decodable {
     
     init?(document: DocumentSnapshot) {
         guard let data = document.data() else { return nil}
+        guard let username = data["username"] as? String,
+        let email = data["email"] as? String,
+        let avatarStringURL = data["avatarStringURL"] as? String,
+        let description = data["description"] as? String,
+        let sex = data["sex"] as? String,
+        let id = data["uid"] as? String else { return nil }
+        
+        self.username = username
+        self.email = email
+        self.avatarStringURL = avatarStringURL
+        self.description = description
+        self.sex = sex
+        self.id = id
+    }
+    
+    init?(document: QueryDocumentSnapshot) {
+        let data = document.data()
         guard let username = data["username"] as? String,
         let email = data["email"] as? String,
         let avatarStringURL = data["avatarStringURL"] as? String,

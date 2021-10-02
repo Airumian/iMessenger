@@ -1,14 +1,12 @@
 //
 //  InsertableTextField.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 27.09.2021.
+//  Created by Алексей Пархоменко on 29.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
-
 
 import UIKit
-
-
 
 class InsertableTextField: UITextField {
     
@@ -66,27 +64,5 @@ class InsertableTextField: UITextField {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-// MARK: - SwiftUI
-import SwiftUI
-
-struct TextFieldProvider: PreviewProvider {
-    static var previews: some View {
-        ContainerView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainerView: UIViewControllerRepresentable {
-        
-        let profileVC = ProfileViewController()
-        
-        func makeUIViewController(context: UIViewControllerRepresentableContext<TextFieldProvider.ContainerView>) -> ProfileViewController {
-            return profileVC
-        }
-        
-        func updateUIViewController(_ uiViewController: TextFieldProvider.ContainerView.UIViewControllerType, context: UIViewControllerRepresentableContext<TextFieldProvider.ContainerView>) {
-            
-        }
     }
 }

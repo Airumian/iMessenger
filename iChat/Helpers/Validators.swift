@@ -1,8 +1,9 @@
 //
 //  Validators.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 29.09.2021.
+//  Created by Алексей Пархоменко on 31.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import Foundation
@@ -43,4 +44,3 @@ class Validators {
         return predicate.evaluate(with: text)
     }
 }
-

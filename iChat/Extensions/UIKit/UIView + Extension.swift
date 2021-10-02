@@ -1,8 +1,9 @@
 //
 //  UIView + Extension.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 27.09.2021.
+//  Created by Алексей Пархоменко on 29.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit

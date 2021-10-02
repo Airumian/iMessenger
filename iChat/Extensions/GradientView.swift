@@ -1,8 +1,9 @@
 //
 //  GradientView.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 17.09.2021.
+//  Created by Алексей Пархоменко on 28.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit

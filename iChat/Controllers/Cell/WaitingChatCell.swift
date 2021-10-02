@@ -1,8 +1,9 @@
 //
 //  WaitingChatCell.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 18.09.2021.
+//  Created by Алексей Пархоменко on 28.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -10,7 +11,7 @@ import UIKit
 class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     static var reuseId: String = "WaitingChatCell"
     
-    let friendImageView = UIImageView()
+    let friendImageView = UIImageView() 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,7 +24,7 @@ class WaitingChatCell: UICollectionViewCell, SelfConfiguringCell {
     
     func configure<U>(with value: U) where U : Hashable {
         guard let chat: MChat = value as? MChat else { return }
-        friendImageView.image = UIImage(named: chat.userImageString)
+        friendImageView.sd_setImage(with: URL(string: chat.friendAvatarStringURL), completed: nil)
     }
     
     private func setupConstraints() {

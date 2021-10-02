@@ -1,8 +1,9 @@
 //
 //  SectionHeader.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 18.09.2021.
+//  Created by Алексей Пархоменко on 28.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -23,7 +24,7 @@ class SectionHeader: UICollectionReusableView {
             title.topAnchor.constraint(equalTo: self.topAnchor),
             title.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             title.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            title.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            title.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
     

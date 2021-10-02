@@ -1,12 +1,13 @@
 //
 //  LoginViewController.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 24.08.2021.
-//
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
     
@@ -21,11 +22,11 @@ class LoginViewController: UIViewController {
     let googleButton = UIButton(title: "Google", titleColor: .black, backgroundColor: .white, isShadow: true)
     let emailTextField = OneLineTextField(font: .avenir20())
     let passwordTextField = OneLineTextField(font: .avenir20())
-    let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .buttomDark())
+    let loginButton = UIButton(title: "Login", titleColor: .white, backgroundColor: .buttonDark())
     let signUpButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Sign Up", for: .normal)
-        button.setTitleColor(.buttomRed(), for: .normal)
+        button.setTitleColor(.buttonRed(), for: .normal)
         button.titleLabel?.font = .avenir20()
         return button
     }()
@@ -41,6 +42,18 @@ class LoginViewController: UIViewController {
         
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+    }
+    
+    
+}
+
+// MARK: - Actions
+extension LoginViewController {
+    
+    @objc private func googleButtonTapped() {
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
     }
     
     @objc private func loginButtonTapped() {
@@ -53,12 +66,13 @@ class LoginViewController: UIViewController {
                         FirestoreService.shared.getUserData(user: user) { (result) in
                             switch result {
                             case .success(let muser):
-                                self.present(MainTabBarController(), animated: true, completion: nil)
+                                let mainTabBar = MainTabBarController(currentUser: muser)
+                                mainTabBar.modalPresentationStyle = .fullScreen
+                                self.present(mainTabBar, animated: true, completion: nil)
                             case .failure(_):
                                 self.present(SetupProfileViewController(currentUser: user), animated: true, completion: nil)
                             }
                         }
-                        
                     }
                 case .failure(let error):
                     self.showAlert(with: "Ошибка!", and: error.localizedDescription)

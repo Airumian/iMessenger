@@ -1,8 +1,9 @@
 //
 //  Bundle-Decodable.swift
-//  iChat
+//  Chats
 //
-//  Created by Alexander Airumyan on 07.09.2021.
+//  Created by Алексей Пархоменко on 09.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import Foundation

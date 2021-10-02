@@ -1,9 +1,9 @@
 //
 //  SignUpViewController.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 24.08.2021.
-//
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -21,11 +21,11 @@ class SignUpViewController: UIViewController {
     let passwordTextField = OneLineTextField(font: .avenir20())
     let confirmPasswordTextField = OneLineTextField(font: .avenir20())
     
-    let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttomDark(), cornerRadius: 4)
+    let signUpButton = UIButton(title: "Sign Up", titleColor: .white, backgroundColor: .buttonDark(), cornerRadius: 4)
     let loginButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Login", for: .normal)
-        button.setTitleColor(.buttomRed(), for: .normal)
+        button.setTitleColor(.buttonRed(), for: .normal)
         button.titleLabel?.font = .avenir20()
         return button
     }()
@@ -41,7 +41,10 @@ class SignUpViewController: UIViewController {
         signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
     }
-    
+}
+
+// MARK: - Actions
+extension SignUpViewController {
     @objc private func signUpButtonTapped() {
         AuthService.shared.register(
             email: emailTextField.text,
@@ -155,4 +158,3 @@ extension UIViewController {
     }
     
 }
-

@@ -1,8 +1,9 @@
 //
 //  UserError.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 02.10.2021.
+//  Created by Алексей Пархоменко on 01.02.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import Foundation

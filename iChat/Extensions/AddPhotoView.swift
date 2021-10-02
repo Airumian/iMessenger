@@ -1,8 +1,9 @@
 //
 //  AddPhotoView.swift
-//  iChat
+//  IChat
 //
-//  Created by Alexander Airumyan on 25.08.2021.
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +13,7 @@ class AddPhotoView: UIView {
     var circleImageView: UIImageView = {
        let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = #imageLiteral(resourceName: "Avatar")
+        imageView.image = #imageLiteral(resourceName: "avatar")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.layer.borderColor = UIColor.black.cgColor
@@ -25,7 +26,7 @@ class AddPhotoView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         let myImage = #imageLiteral(resourceName: "plus")
         button.setImage(myImage, for: .normal)
-        button.tintColor = .buttomDark()
+        button.tintColor = .buttonDark()
         return button
     }()
     

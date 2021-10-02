@@ -1,8 +1,9 @@
 //
-//  UIButtom + Extension.swift
-//  iChat
+//  UIButton + Extension.swift
+//  IChat
 //
-//  Created by Alexander Airumyan on 23.08.2021.
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import Foundation

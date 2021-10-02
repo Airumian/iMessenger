@@ -1,8 +1,9 @@
 //
-//  SegmantentControl + Extension.swift
-//  iChat
+//  SegmentedControl + Extension.swift
+//  IChat
 //
-//  Created by Alexander Airumyan on 26.08.2021.
+//  Created by Алексей Пархоменко on 26.01.2020.
+//  Copyright © 2020 Алексей Пархоменко. All rights reserved.
 //
 
 import UIKit
